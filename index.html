@@ -220,19 +220,20 @@
                 text-to-image model to swap a concept in the source image with a
                 customized target concept. However, the existing methods still
                 face the challenges of <b><i>inconsistency</i></b> and
-                <b><i>inefficiency</i></b>. They struggle to maintain
-                consistency in both the foreground and background during concept
-                swapping, especially when the shape difference is large between
-                objects. Additionally, they either require time-consuming
-                training processes or involve redundant calculations during
-                inference. To tackle these issues, we introduce InstantSwap, a new CCS
-                method that aims to handle sharp shape disparity at speed.
-                Specifically, we first extract the bbox of the object in the
-                source image <i>automatically</i> based on attention map
-                analysis and leverage the bbox to achieve both foreground and
-                background consistency. For background consistency, we remove
-                the gradient outside the bbox during the swapping process so
-                that the background is free from being modified. For foreground
+                <b><i>inefficiency</i></b
+                >. They struggle to maintain consistency in both the foreground
+                and background during concept swapping, especially when the
+                shape difference is large between objects. Additionally, they
+                either require time-consuming training processes or involve
+                redundant calculations during inference. To tackle these issues,
+                we introduce InstantSwap, a new CCS method that aims to handle
+                sharp shape disparity at speed. Specifically, we first extract
+                the bbox of the object in the source image
+                <i>automatically</i> based on attention map analysis and
+                leverage the bbox to achieve both foreground and background
+                consistency. For background consistency, we remove the gradient
+                outside the bbox during the swapping process so that the
+                background is free from being modified. For foreground
                 consistency, we employ a cross-attention mechanism to inject
                 semantic information into both source and target concepts inside
                 the box. This helps learn semantic-enhanced representations that
@@ -256,6 +257,7 @@
     <section class="hero is-small">
       <div class="hero-body">
         <div class="container">
+          <h2 class="title is-3">Gallery</h2>
           <div id="results-carousel" class="carousel results-carousel">
             <div class="item">
               <!-- Your image here -->
@@ -292,16 +294,16 @@
     <!-- End image carousel -->
 
     <!-- Youtube video -->
-    <section class="hero is-small is-light">
+    <!-- <section class="hero is-small is-light">
       <div class="hero-body">
-        <div class="container">
-          <!-- Paper video. -->
-          <h2 class="title is-3">Video Presentation</h2>
+        <div class="container"> -->
+    <!-- Paper video. -->
+    <!-- <h2 class="title is-3">Video Presentation</h2>
           <div class="columns is-centered has-text-centered">
             <div class="column is-four-fifths">
-              <div class="publication-video">
-                <!-- Youtube embed code here -->
-                <iframe
+              <div class="publication-video"> -->
+    <!-- Youtube embed code here -->
+    <!-- <iframe
                   src="https://www.youtube.com/embed/JkaxUblCGz0"
                   frameborder="0"
                   allow="autoplay; encrypted-media"
@@ -312,11 +314,11 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
     <!-- End youtube video -->
 
     <!-- Video carousel -->
-    <section class="hero is-small">
+    <!-- <section class="hero is-small">
       <div class="hero-body">
         <div class="container">
           <h2 class="title is-3">Another Carousel</h2>
@@ -330,9 +332,9 @@
                 muted
                 loop
                 height="100%"
-              >
-                <!-- Your video file here -->
-                <source src="static/videos/carousel1.mp4" type="video/mp4" />
+              > -->
+    <!-- Your video file here -->
+    <!-- <source src="static/videos/carousel1.mp4" type="video/mp4" />
               </video>
             </div>
             <div class="item item-video2">
@@ -344,9 +346,9 @@
                 muted
                 loop
                 height="100%"
-              >
-                <!-- Your video file here -->
-                <source src="static/videos/carousel2.mp4" type="video/mp4" />
+              > -->
+    <!-- Your video file here -->
+    <!-- <source src="static/videos/carousel2.mp4" type="video/mp4" />
               </video>
             </div>
             <div class="item item-video3">
@@ -359,19 +361,19 @@
                 loop
                 height="100%"
               >
-                \
-                <!-- Your video file here -->
-                <source src="static/videos/carousel3.mp4" type="video/mp4" />
+                \ -->
+    <!-- Your video file here -->
+    <!-- <source src="static/videos/carousel3.mp4" type="video/mp4" />
               </video>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
     <!-- End video carousel -->
 
     <!-- Paper poster -->
-    <section class="hero is-small is-light">
+    <!-- <section class="hero is-small is-light">
       <div class="hero-body">
         <div class="container">
           <h2 class="title">Poster</h2>
@@ -380,7 +382,7 @@
           </iframe>
         </div>
       </div>
-    </section>
+    </section> -->
     <!--End paper poster -->
 
     <!--BibTex citation -->
