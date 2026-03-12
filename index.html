@@ -1,47 +1,85 @@
-<!-- ref page https://github.com/nerfies/nerfies.github.io/blob/main/index.html -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
-    <!-- Replace the content tag with appropriate information -->
-    <meta name="description" content="DESCRIPTION META TAG" />
-    <meta property="og:title" content="SOCIAL MEDIA TITLE TAG" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>InstantSwap: Fast Customized Concept Swapping across Sharp Shape Differences | ICLR 2025</title>
+    <meta
+      name="description"
+      content="InstantSwap is a fast customized concept swapping method that preserves foreground and background consistency across large shape differences, accepted at ICLR 2025."
+    />
+    <meta
+      name="keywords"
+      content="InstantSwap, customized concept swapping, image editing, diffusion models, ICLR 2025, computer vision"
+    />
+    <meta
+      name="author"
+      content="Chenyang Zhu, Kai Li, Yue Ma, Longxiang Tang, Chengyu Fang, Chubin Chen, Qifeng Chen, Xiu Li"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0f766e" />
+
+    <link rel="canonical" href="https://instantswap.github.io/" />
+    <link rel="icon" type="image/x-icon" href="static/images/favicon.ico" />
+    <link rel="apple-touch-icon" href="static/images/favicon.ico" />
+
+    <meta
+      property="og:title"
+      content="InstantSwap: Fast Customized Concept Swapping across Sharp Shape Differences"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://instantswap.github.io/" />
     <meta
       property="og:description"
-      content="SOCIAL MEDIA DESCRIPTION TAG TAG"
+      content="A fast customized concept swapping method that preserves foreground and background consistency across large shape differences."
     />
-    <meta property="og:url" content="URL OF THE WEBSITE" />
-    <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
-    <meta property="og:image" content="static/image/your_banner_image.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image"
+      content="https://instantswap.github.io/static/images/title_case-small.jpg"
+    />
+    <meta property="og:site_name" content="InstantSwap" />
 
-    <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="InstantSwap: Fast Customized Concept Swapping across Sharp Shape Differences"
+    />
     <meta
       name="twitter:description"
-      content="TWITTER BANNER DESCRIPTION META TAG"
+      content="A fast customized concept swapping method that preserves foreground and background consistency across large shape differences."
     />
-    <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
     <meta
       name="twitter:image"
-      content="static/images/your_twitter_banner_image.png"
+      content="https://instantswap.github.io/static/images/title_case-small.jpg"
     />
-    <meta name="twitter:card" content="summary_large_image" />
-    <!-- Keywords for your paper to be indexed by-->
-    <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- 网页标题 -->
-    <title>InstantSwap</title>
-    <link rel="icon" type="image/x-icon" href="static/images/favicon.ico" />
+
+    <meta
+      name="citation_title"
+      content="InstantSwap: Fast Customized Concept Swapping across Sharp Shape Differences"
+    />
+    <meta name="citation_author" content="Zhu, Chenyang" />
+    <meta name="citation_author" content="Li, Kai" />
+    <meta name="citation_author" content="Ma, Yue" />
+    <meta name="citation_author" content="Tang, Longxiang" />
+    <meta name="citation_author" content="Fang, Chengyu" />
+    <meta name="citation_author" content="Chen, Chubin" />
+    <meta name="citation_author" content="Chen, Qifeng" />
+    <meta name="citation_author" content="Li, Xiu" />
+    <meta name="citation_publication_date" content="2024" />
+    <meta name="citation_conference_title" content="ICLR 2025" />
+    <meta name="citation_pdf_url" content="https://arxiv.org/pdf/2412.01197.pdf" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
     <link
-      href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Source+Serif+4:wght@400;600&display=swap"
       rel="stylesheet"
     />
 
     <link rel="stylesheet" href="static/css/bulma.min.css" />
     <link rel="stylesheet" href="static/css/bulma-carousel.min.css" />
-    <link rel="stylesheet" href="static/css/bulma-slider.min.css" />
     <link rel="stylesheet" href="static/css/fontawesome.all.min.css" />
     <link
       rel="stylesheet"
@@ -49,145 +87,141 @@
     />
     <link rel="stylesheet" href="static/css/index.css" />
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
-    <script defer src="static/js/fontawesome.all.min.js"></script>
-    <script src="static/js/bulma-carousel.min.js"></script>
-    <script src="static/js/bulma-slider.min.js"></script>
-    <script src="static/js/index.js"></script>
+    <script defer src="static/js/bulma-carousel.min.js"></script>
+    <script defer src="static/js/index.js"></script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ScholarlyArticle",
+        "headline": "InstantSwap: Fast Customized Concept Swapping across Sharp Shape Differences",
+        "author": [
+          { "@type": "Person", "name": "Chenyang Zhu" },
+          { "@type": "Person", "name": "Kai Li" },
+          { "@type": "Person", "name": "Yue Ma" },
+          { "@type": "Person", "name": "Longxiang Tang" },
+          { "@type": "Person", "name": "Chengyu Fang" },
+          { "@type": "Person", "name": "Chubin Chen" },
+          { "@type": "Person", "name": "Qifeng Chen" },
+          { "@type": "Person", "name": "Xiu Li" }
+        ],
+        "description": "InstantSwap is a fast customized concept swapping method that preserves foreground and background consistency across large shape differences.",
+        "datePublished": "2024",
+        "url": "https://instantswap.github.io/",
+        "image": "https://instantswap.github.io/static/images/title_case-small.jpg",
+        "publisher": {
+          "@type": "Organization",
+          "name": "ICLR 2025"
+        }
+      }
+    </script>
   </head>
   <body>
-    <!-- Start of Navbar -->
-    <nav
-      class="navbar is-fixed-top"
-      role="navigation"
-      aria-label="main navigation"
-    >
-      <div class="navbar-brand">
-        <a class="navbar-item" href="index.html">
-          <img
-            src="static/images/favicon.ico"
-            width="30"
-            height="30"
-            alt="InstantSwap Logo"
-          />
-        </a>
-        <a
-          role="button"
-          class="navbar-burger"
-          aria-label="menu"
-          aria-expanded="false"
-          data-target="navbarBasicExample"
-        >
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
-      </div>
-      <div id="navbarBasicExample" class="navbar-menu">
-        <div class="navbar-start">
-          <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link"> Other works </a>
-            <div class="navbar-dropdown">
-              <a class="navbar-item" href="https://multibooth.github.io/"> MultiBooth </a>
-              <!-- <a class="navbar-item" href="page2.html"> Page 2 </a> -->
-              <!-- <a class="navbar-item" href="page3.html"> Page 3 </a> -->
-              <hr class="navbar-divider" />
-              <a class="navbar-item" href="https://chenyangzhu1.github.io/"> About </a>
-            </div>
+    <button class="scroll-to-top" type="button" aria-label="Scroll to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <div class="more-works-container">
+      <button
+        class="more-works-btn"
+        type="button"
+        aria-label="Open related works"
+        aria-expanded="false"
+        aria-controls="moreWorksDropdown"
+      >
+        <i class="fas fa-flask"></i>
+        <span>More Works</span>
+        <i class="fas fa-chevron-down dropdown-arrow"></i>
+      </button>
+      <div class="more-works-dropdown" id="moreWorksDropdown">
+        <div class="dropdown-header">
+          <div>
+            <p class="dropdown-eyebrow">Related Projects</p>
+            <h4>More from the authors</h4>
           </div>
+          <button class="close-btn" type="button" aria-label="Close related works">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="works-list">
+          <a class="work-item" href="https://multibooth.github.io/" target="_blank" rel="noreferrer">
+            <div class="work-info">
+              <span class="work-venue">Project Page</span>
+              <h5>MultiBooth</h5>
+              <p>Another research project page exploring controllable multi-subject generation.</p>
+            </div>
+            <i class="fas fa-external-link-alt"></i>
+          </a>
+          <a class="work-item" href="https://chenyangzhu1.github.io/" target="_blank" rel="noreferrer">
+            <div class="work-info">
+              <span class="work-venue">Author Page</span>
+              <h5>About</h5>
+              <p>Homepage for Chenyang Zhu with publications, updates, and related research.</p>
+            </div>
+            <i class="fas fa-external-link-alt"></i>
+          </a>
         </div>
       </div>
-    </nav>
-    <!-- End of Navbar -->
+    </div>
 
-    <!-- Existing content remains the same -->
-    <section class="hero">
-      <!-- Hero section content -->
-    </section>
-
-    <!-- Other sections -->
-
-    <!-- Ensure jQuery and Bulma JS are included in the head or before closing body tag -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="static/js/bulma.min.js"></script>
-  </body>
-  <body>
-    <section class="hero">
-      <div class="hero-body">
-        <div class="container is-max-desktop">
-          <div class="columns is-centered">
-            <div class="column has-text-centered">
-              <h1 class="title is-1 publication-title">
-                InstantSwap: Fast Customized Concept Swapping across Sharp Shape
-                Differences
-              </h1>
-              <div class="is-size-5 publication-authors">
-                <!-- Paper authors -->
-                <span class="author-block">
-                  <a href="https://chenyangzhu1.github.io" target="_blank"
-                    >Chenyang Zhu</a
-                  ><sup>1,*</sup>,</span
-                >
-                <span class="author-block">
-                  <a href="https://kailigo.github.io/" target="_blank">
-                    Kai Li</a
-                  ><sup>2,*,✝</sup>,</span
-                >
-                <span class="author-block">
-                  <a href="https://mayuelala.github.io/" target="_blank">
-                    Yue Ma</a
-                  ><sup>3,*</sup>,</span
-                >
-                <span class="author-block">
-                  <a href="https://instantswap.github.io/" target="_blank">
-                    Longxiang Tang</a
-                  ><sup>1</sup>,</span
-                >
-                <span class="author-block">
-                  <a href="https://chengyufang.site/" target="_blank">
-                    Chengyu Fang</a
-                  ><sup>1</sup>,</span
-                >
-                <span class="author-block">
-                  <a href="https://instantswap.github.io/" target="_blank">
-                    Chubin Chen</a
-                  ><sup>1</sup>,</span
-                >
-                <span class="author-block">
-                  <a href="https://cqf.io/" target="_blank"> Qifeng Chen</a
-                  ><sup>3</sup>,</span
-                >
-                <span class="author-block">
-                  <a href="https://instantswap.github.io/" target="_blank"
-                    >Xiu Li</a
-                  ><sup>1,✝</sup>
-                </span>
-              </div>
-
-              <div class="is-size-5 publication-authors">
-                <span class="author-block"
-                  ><sup>1</sup>Tsinghua University <sup>2</sup>Meta Reality Labs
-                  <sup>3</sup>HKUST<br />ICLR 2025</span
-                >
-                <span class="eql-cntrb"
-                  ><small
-                    ><br /><sup>*</sup>Indicates Equal Contribution.</small
-                  >
-                  <small
-                    ><br /><sup>✝</sup>Indicates Corresponding authors.</small
-                  ></span
-                >
-              </div>
-
+    <main id="main-content">
+      <section class="hero project-hero">
+        <div class="hero-body">
+          <div class="container is-max-desktop">
+            <div class="columns is-centered">
               <div class="column has-text-centered">
+                <p class="eyebrow">ICLR 2025</p>
+                <h1 class="title is-1 publication-title">
+                  InstantSwap: Fast Customized Concept Swapping across Sharp Shape Differences
+                </h1>
+
+                <div class="is-size-5 publication-authors">
+                  <span class="author-block">
+                    <a href="https://chenyangzhu1.github.io" target="_blank" rel="noreferrer">Chenyang Zhu</a><sup>1,*</sup>,
+                  </span>
+                  <span class="author-block">
+                    <a href="https://kailigo.github.io/" target="_blank" rel="noreferrer">Kai Li</a><sup>2,*,&dagger;</sup>,
+                  </span>
+                  <span class="author-block">
+                    <a href="https://mayuelala.github.io/" target="_blank" rel="noreferrer">Yue Ma</a><sup>3,*</sup>,
+                  </span>
+                  <span class="author-block">
+                    <a href="https://instantswap.github.io/" target="_blank" rel="noreferrer">Longxiang Tang</a><sup>1</sup>,
+                  </span>
+                  <span class="author-block">
+                    <a href="https://chengyufang.site/" target="_blank" rel="noreferrer">Chengyu Fang</a><sup>1</sup>,
+                  </span>
+                  <span class="author-block">
+                    <a href="https://instantswap.github.io/" target="_blank" rel="noreferrer">Chubin Chen</a><sup>1</sup>,
+                  </span>
+                  <span class="author-block">
+                    <a href="https://cqf.io/" target="_blank" rel="noreferrer">Qifeng Chen</a><sup>3</sup>,
+                  </span>
+                  <span class="author-block">
+                    <a href="https://instantswap.github.io/" target="_blank" rel="noreferrer">Xiu Li</a><sup>1,&dagger;</sup>
+                  </span>
+                </div>
+
+                <div class="publication-meta">
+                  <div class="affiliation-line">
+                    <span><sup>1</sup>Tsinghua University</span>
+                    <span><sup>2</sup>Meta Reality Labs</span>
+                    <span><sup>3</sup>HKUST</span>
+                  </div>
+                  <span class="publication-venue">Accepted at ICLR 2025</span>
+                  <p class="contribution-note">
+                    <small><sup>*</sup> Indicates equal contribution.</small>
+                    <small><sup>&dagger;</sup> Indicates corresponding authors.</small>
+                  </p>
+                </div>
+
                 <div class="publication-links">
-                  <!-- Arxiv PDF link -->
                   <span class="link-block">
                     <a
                       href="https://arxiv.org/pdf/2412.01197.pdf"
                       target="_blank"
-                      class="external-link button is-normal is-rounded is-dark"
+                      rel="noreferrer"
+                      class="external-link button is-normal is-dark"
                     >
                       <span class="icon">
                         <i class="fas fa-file-pdf"></i>
@@ -195,27 +229,12 @@
                       <span>Paper</span>
                     </a>
                   </span>
-
-                  <!-- Supplementary PDF link -->
-                  <!-- <span class="link-block">
-                    <a
-                      href="static/pdfs/supplementary_material.pdf"
-                      target="_blank"
-                      class="external-link button is-normal is-rounded is-dark"
-                    >
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
-                    </a>
-                  </span> -->
-
-                  <!-- Github link -->
                   <span class="link-block">
                     <a
                       href="https://github.com/chenyangzhu1/InstantSwap"
                       target="_blank"
-                      class="external-link button is-normal is-rounded is-dark"
+                      rel="noreferrer"
+                      class="external-link button is-normal is-dark"
                     >
                       <span class="icon">
                         <i class="fab fa-github"></i>
@@ -223,13 +242,12 @@
                       <span>Code</span>
                     </a>
                   </span>
-
-                  <!-- ArXiv abstract Link -->
                   <span class="link-block">
                     <a
                       href="https://arxiv.org/abs/2412.01197"
                       target="_blank"
-                      class="external-link button is-normal is-rounded is-dark"
+                      rel="noreferrer"
+                      class="external-link button is-normal is-dark"
                     >
                       <span class="icon">
                         <i class="ai ai-arxiv"></i>
@@ -242,309 +260,171 @@
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Teaser video-->
-    <section class="hero teaser">
-      <div class="container is-max-desktop">
-        <div class="hero-body">
-          <!-- <video poster="" id="tree" autoplay controls muted loop height="100%"> -->
-          <!-- Your video here -->
-          <!-- <source src="static/videos/banner_video.mp4" type="video/mp4" /> -->
-          <!-- </video> -->
-          <img src="static/images/title_case-small.jpg" alt="MY ALT TEXT" />
-          <h2 class="subtitle has-text-centered">
-            Visual results of InstantSwap. Our approach can seamlessly swap a
-            source concept with a customized concept in an image, even with
-            great shape differences. Moreover, InstantSwap can be used for other
-            tasks, such as concept insertion and removal.
-          </h2>
+      <section class="section teaser-section">
+        <div class="container is-max-desktop">
+          <div class="section-panel">
+            <figure class="section-figure">
+              <img
+                src="static/images/title_case-small.jpg"
+                alt="InstantSwap customized concept swapping teaser results"
+                loading="eager"
+              />
+            </figure>
+            <p class="section-caption">
+              Visual results of InstantSwap. Our approach can seamlessly swap a source concept with a customized concept in an image, even with great shape differences. Moreover, InstantSwap can be used for other tasks, such as concept insertion and removal.
+            </p>
+          </div>
         </div>
-      </div>
-    </section>
-    <!-- End teaser video -->
+      </section>
 
-    <!-- Paper abstract -->
-    <section class="section hero is-light">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-four-fifths">
-            <h2 class="title is-3">Abstract</h2>
-            <div class="content has-text-justified">
+      <section class="section section-muted" id="abstract">
+        <div class="container is-max-desktop">
+          <div class="section-panel">
+            <div class="section-header">
+              <h2 class="title is-3">Abstract</h2>
+            </div>
+            <div class="content has-text-justified section-copy">
               <p>
-                Recent advances in Customized Concept Swapping (CCS) enable a
-                text-to-image model to swap a concept in the source image with a
-                customized target concept. However, the existing methods still
-                face the challenges of <b><i>inconsistency</i></b> and
-                <b><i>inefficiency</i></b
-                >. They struggle to maintain consistency in both the foreground
-                and background during concept swapping, especially when the
-                shape difference is large between objects. Additionally, they
-                either require time-consuming training processes or involve
-                redundant calculations during inference. To tackle these issues,
-                we introduce InstantSwap, a new CCS method that aims to handle
-                sharp shape disparity at speed. Specifically, we first extract
-                the bbox of the object in the source image
-                <i>automatically</i> based on attention map analysis and
-                leverage the bbox to achieve both foreground and background
-                consistency. For background consistency, we remove the gradient
-                outside the bbox during the swapping process so that the
-                background is free from being modified. For foreground
-                consistency, we employ a cross-attention mechanism to inject
-                semantic information into both source and target concepts inside
-                the box. This helps learn semantic-enhanced representations that
-                encourage the swapping process to focus on the foreground
-                objects. To improve swapping speed, we avoid computing gradients
-                at each timestep but instead calculate them periodically to
-                reduce the number of forward passes, which improves efficiency a
-                lot with a little sacrifice on performance. Finally, we
-                establish a benchmark dataset to facilitate comprehensive
-                evaluation. Extensive evaluations demonstrate the superiority
-                and versatility of InstantSwap.
+                Recent advances in Customized Concept Swapping (CCS) enable a text-to-image model to swap a concept in the source image with a customized target concept. However, the existing methods still face the challenges of <b><i>inconsistency</i></b> and <b><i>inefficiency</i></b>. They struggle to maintain consistency in both the foreground and background during concept swapping, especially when the shape difference is large between objects. Additionally, they either require time-consuming training processes or involve redundant calculations during inference. To tackle these issues, we introduce InstantSwap, a new CCS method that aims to handle sharp shape disparity at speed. Specifically, we first extract the bbox of the object in the source image <i>automatically</i> based on attention map analysis and leverage the bbox to achieve both foreground and background consistency. For background consistency, we remove the gradient outside the bbox during the swapping process so that the background is free from being modified. For foreground consistency, we employ a cross-attention mechanism to inject semantic information into both source and target concepts inside the box. This helps learn semantic-enhanced representations that encourage the swapping process to focus on the foreground objects. To improve swapping speed, we avoid computing gradients at each timestep but instead calculate them periodically to reduce the number of forward passes, which improves efficiency a lot with a little sacrifice on performance. Finally, we establish a benchmark dataset to facilitate comprehensive evaluation. Extensive evaluations demonstrate the superiority and versatility of InstantSwap.
               </p>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-    <!-- End paper abstract -->
+      </section>
 
-    <!-- Paper method -->
-    <section class="section hero">
-      <div class="container is-max-desktop">
-        <h2 class="title is-3">Method</h2>
-      </div>
-      <div class="container is-max-desktop">
-        <!-- <h2 class="title is-3">Comparison</h2> -->
-        <div class="hero-body">
-          <!-- <video poster="" id="tree" autoplay controls muted loop height="100%"> -->
-          <!-- Your video here -->
-          <!-- <source src="static/videos/banner_video.mp4" type="video/mp4" /> -->
-          <!-- </video> -->
-          <img src="static\images\Framework.jpg" alt="MY ALT TEXT" />
-          <h2 class="subtitle has-text-centered">
-            Overall pipeline of InstantSwap. We first obtain the bbox of the
-            source concept automatically. The obtained bbox is input into SECR
-            in both the source and target branches to enhance the foreground
-            swapping consistency. Additionally, the source and target branches
-            generate the prediction of noise for the source and target images
-            based on their respective prompts. The predicted noise, along with
-            the bbox, is used for the BGM to preserve background consistency.
-          </h2>
-        </div>
-      </div>
-    </section>
-    <!-- End paper method -->
-
-    <!-- Paper compare -->
-    <section class="section hero is-light">
-      <div class="container is-max-desktop">
-        <h2 class="title is-3">Comparison</h2>
-      </div>
-      <div class="container is-max-desktop">
-        <!-- <h2 class="title is-3">Comparison</h2> -->
-        <div class="hero-body">
-          <!-- <video poster="" id="tree" autoplay controls muted loop height="100%"> -->
-          <!-- Your video here -->
-          <!-- <source src="static/videos/banner_video.mp4" type="video/mp4" /> -->
-          <!-- </video> -->
-          <img
-            src="static\images\quality_comparison-small.jpg"
-            alt="MY ALT TEXT"
-          />
-          <h2 class="subtitle has-text-centered">
-            Our InstantSwap demonstrates excellent performance in maintaining
-            consistency in both the foreground and background compared to other
-            methods
-          </h2>
-        </div>
-      </div>
-    </section>
-    <!-- End paper compare -->
-
-    <!-- Image carousel -->
-    <section class="section hero">
-      <div class="container is-max-desktop">
-        <h2 class="title is-3">Gallery</h2>
-      </div>
-      <div class="hero-body">
+      <section class="section" id="method">
         <div class="container is-max-desktop">
-          <div id="results-carousel" class="carousel results-carousel">
-            <div class="item">
-              <!-- Your image here -->
-              <img
-                src="static\images\gallery_barn_candle-small.jpg"
-                alt="MY ALT TEXT"
-              />
-              <h2 class="subtitle has-text-centered">
-                More qualitative results of the barn and candle.
-              </h2>
+          <div class="section-panel">
+            <div class="section-header">
+              <h2 class="title is-3">Method</h2>
             </div>
-            <div class="item">
-              <!-- Your image here -->
+            <figure class="section-figure">
               <img
-                src="static\images\gallery_cat_cup-small.jpg"
-                alt="MY ALT TEXT"
+                src="static/images/Framework.jpg"
+                alt="Overview of the InstantSwap method pipeline"
+                loading="lazy"
               />
-              <h2 class="subtitle has-text-centered">
-                More qualitative results of the cat and cup.
-              </h2>
-            </div>
-            <div class="item">
-              <!-- Your image here -->
-              <img
-                src="static\images\gallery_dog_vase-small.jpg"
-                alt="MY ALT TEXT"
-              />
-              <h2 class="subtitle has-text-centered">
-                More qualitative results of the dog and vase.
-              </h2>
-            </div>
-            <div class="item">
-              <!-- Your image here -->
-              <img
-                src="static\images\gallery_duck-small.jpg"
-                alt="MY ALT TEXT"
-              />
-              <h2 class="subtitle has-text-centered">
-                More qualitative results of the duck.
-              </h2>
-            </div>
-            <div class="item">
-              <!-- Your image here -->
-              <img
-                src="static\images\gallery_flower_sunglasses-small.jpg"
-                alt="MY ALT TEXT"
-              />
-              <h2 class="subtitle has-text-centered">
-                More qualitative results of the flower and sunglasses.
-              </h2>
-            </div>
-            <div class="item">
-              <!-- Your image here -->
-              <img
-                src="static\images\gallery_teapot-small.jpg"
-                alt="MY ALT TEXT"
-              />
-              <h2 class="subtitle has-text-centered">
-                More qualitative results of the teapot.
-              </h2>
-            </div>
+            </figure>
+            <p class="section-caption">
+              Overall pipeline of InstantSwap. We first obtain the bbox of the source concept automatically. The obtained bbox is input into SECR in both the source and target branches to enhance the foreground swapping consistency. Additionally, the source and target branches generate the prediction of noise for the source and target images based on their respective prompts. The predicted noise, along with the bbox, is used for the BGM to preserve background consistency.
+            </p>
           </div>
         </div>
-      </div>
-    </section>
-    <!-- End image carousel -->
+      </section>
 
-    <!-- Youtube video -->
-    <!-- <section class="hero is-small is-light">
-      <div class="hero-body">
-        <div class="container"> -->
-    <!-- Paper video. -->
-    <!-- <h2 class="title is-3">Video Presentation</h2>
-          <div class="columns is-centered has-text-centered">
-            <div class="column is-four-fifths">
-              <div class="publication-video"> -->
-    <!-- Youtube embed code here -->
-    <!-- <iframe
-                  src="https://www.youtube.com/embed/JkaxUblCGz0"
-                  frameborder="0"
-                  allow="autoplay; encrypted-media"
-                  allowfullscreen
-                ></iframe>
+      <section class="section section-muted" id="comparison">
+        <div class="container is-max-desktop">
+          <div class="section-panel">
+            <div class="section-header">
+              <h2 class="title is-3">Comparison</h2>
+            </div>
+            <figure class="section-figure">
+              <img
+                src="static/images/quality_comparison-small.jpg"
+                alt="Comparison between InstantSwap and other methods"
+                loading="lazy"
+              />
+            </figure>
+            <p class="section-caption">
+              Our InstantSwap demonstrates excellent performance in maintaining consistency in both the foreground and background compared to other methods.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="gallery">
+        <div class="container is-max-desktop">
+          <div class="section-panel">
+            <div class="section-header">
+              <h2 class="title is-3">Gallery</h2>
+            </div>
+            <div id="results-carousel" class="carousel results-carousel">
+              <div class="item">
+                <img
+                  src="static/images/gallery_barn_candle-small.jpg"
+                  alt="InstantSwap qualitative results for barn and candle"
+                  loading="lazy"
+                />
+                <h3 class="subtitle has-text-centered">
+                  More qualitative results of the barn and candle.
+                </h3>
+              </div>
+              <div class="item">
+                <img
+                  src="static/images/gallery_cat_cup-small.jpg"
+                  alt="InstantSwap qualitative results for cat and cup"
+                  loading="lazy"
+                />
+                <h3 class="subtitle has-text-centered">
+                  More qualitative results of the cat and cup.
+                </h3>
+              </div>
+              <div class="item">
+                <img
+                  src="static/images/gallery_dog_vase-small.jpg"
+                  alt="InstantSwap qualitative results for dog and vase"
+                  loading="lazy"
+                />
+                <h3 class="subtitle has-text-centered">
+                  More qualitative results of the dog and vase.
+                </h3>
+              </div>
+              <div class="item">
+                <img
+                  src="static/images/gallery_duck-small.jpg"
+                  alt="InstantSwap qualitative results for duck"
+                  loading="lazy"
+                />
+                <h3 class="subtitle has-text-centered">More qualitative results of the duck.</h3>
+              </div>
+              <div class="item">
+                <img
+                  src="static/images/gallery_flower_sunglasses-small.jpg"
+                  alt="InstantSwap qualitative results for flower and sunglasses"
+                  loading="lazy"
+                />
+                <h3 class="subtitle has-text-centered">
+                  More qualitative results of the flower and sunglasses.
+                </h3>
+              </div>
+              <div class="item">
+                <img
+                  src="static/images/gallery_teapot-small.jpg"
+                  alt="InstantSwap qualitative results for teapot"
+                  loading="lazy"
+                />
+                <h3 class="subtitle has-text-centered">More qualitative results of the teapot.</h3>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section> -->
-    <!-- End youtube video -->
+      </section>
 
-    <!-- Video carousel -->
-    <!-- <section class="hero is-small">
-      <div class="hero-body">
-        <div class="container">
-          <h2 class="title is-3">Another Carousel</h2>
-          <div id="results-carousel" class="carousel results-carousel">
-            <div class="item item-video1">
-              <video
-                poster=""
-                id="video1"
-                autoplay
-                controls
-                muted
-                loop
-                height="100%"
-              > -->
-    <!-- Your video file here -->
-    <!-- <source src="static/videos/carousel1.mp4" type="video/mp4" />
-              </video>
+      <section class="section section-muted bibtex-section" id="BibTeX">
+        <div class="container is-max-desktop">
+          <div class="section-panel">
+            <div class="bibtex-header">
+              <h2 class="title is-3">BibTeX</h2>
+              <div class="bibtex-actions">
+                <button class="copy-bibtex-btn" id="copyBibtexButton" type="button">
+                  <i class="fas fa-copy"></i>
+                  <span class="copy-text">Copy</span>
+                </button>
+                <span class="sr-only" id="copyStatus" aria-live="polite"></span>
+              </div>
             </div>
-            <div class="item item-video2">
-              <video
-                poster=""
-                id="video2"
-                autoplay
-                controls
-                muted
-                loop
-                height="100%"
-              > -->
-    <!-- Your video file here -->
-    <!-- <source src="static/videos/carousel2.mp4" type="video/mp4" />
-              </video>
-            </div>
-            <div class="item item-video3">
-              <video
-                poster=""
-                id="video3"
-                autoplay
-                controls
-                muted
-                loop
-                height="100%"
-              >
-                \ -->
-    <!-- Your video file here -->
-    <!-- <source src="static/videos/carousel3.mp4" type="video/mp4" />
-              </video>
-            </div>
+            <pre id="bibtex-code"><code>@article{zhu2024instantswap,
+  title={InstantSwap: Fast Customized Concept Swapping across Sharp Shape Differences},
+  author={Zhu, Chenyang and Li, Kai and Ma, Yue and Tang, Longxiang and Fang, Chengyu and Chen, Chubin and Chen, Qifeng and Li, Xiu},
+  journal={arXiv preprint arXiv:2412.01197},
+  year={2024}
+}</code></pre>
           </div>
         </div>
-      </div>
-    </section> -->
-    <!-- End video carousel -->
-
-    <!-- Paper poster -->
-    <!-- <section class="hero is-small is-light">
-      <div class="hero-body">
-        <div class="container">
-          <h2 class="title">Poster</h2>
-
-          <iframe src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        </div>
-      </div>
-    </section> -->
-    <!--End paper poster -->
-
-    <!-- BibTeX citation -->
-    <section class="section" id="BibTeX">
-      <div class="container is-max-desktop content">
-        <h2 class="title">BibTeX</h2>
-        <div class="hero-body">
-          <pre><code class="language-bibtex">@article{zhu2024instantswap,
-            title={InstantSwap: Fast Customized Concept Swapping across Sharp Shape Differences},
-            author={Zhu, Chenyang and Li, Kai and Ma, Yue and Tang, Longxiang and Fang, Chengyu and Chen, Chubin and Chen, Qifeng and Li, Xiu},
-            journal={arXiv preprint arXiv:2412.01197},
-            year={2024}
-          }
-          </code></pre>
-        </div>
-      </div>
-    </section>
-    <!-- End BibTeX citation -->
+      </section>
+    </main>
 
     <footer class="footer">
       <div class="container">
@@ -556,22 +436,19 @@
                 <a
                   href="https://github.com/eliahuhorwitz/Academic-project-page-template"
                   target="_blank"
+                  rel="noreferrer"
                   >Academic Project Page Template</a
                 >
-                which was adopted from the <a
-                  href="https://nerfies.github.io"
-                  target="_blank"
-                  >Nerfies</a
-                > project page. You are free to borrow the source code of this
-                website, we just ask that you link back to this page in the
-                footer. <br />
+                which was adopted from the
+                <a href="https://nerfies.github.io" target="_blank" rel="noreferrer">Nerfies</a>
+                project page. You are free to borrow the source code of this website, we just ask that you link back to this page in the footer.
+                <br />
                 This website is licensed under a
                 <a
-                  rel="license"
                   href="http://creativecommons.org/licenses/by-sa/4.0/"
                   target="_blank"
-                  >Creative Commons Attribution-ShareAlike 4.0 International
-                  License</a
+                  rel="license noreferrer"
+                  >Creative Commons Attribution-ShareAlike 4.0 International License</a
                 >.
               </p>
             </div>
@@ -579,11 +456,5 @@
         </div>
       </div>
     </footer>
-
-    <!-- Statcounter tracking code -->
-
-    <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
-
-    <!-- End of Statcounter Code -->
   </body>
 </html>
