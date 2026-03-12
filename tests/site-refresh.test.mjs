@@ -65,8 +65,10 @@ function createHarness(options = {}) {
       dispatch(type, event = {}) {
         const handler = listeners.get(type);
         if (handler) {
-          handler(event);
+          return handler(event);
         }
+
+        return undefined;
       },
       setAttribute(name, value) {
         attributes.set(name, String(value));
@@ -104,12 +106,15 @@ function createHarness(options = {}) {
     closeButton: createElement({ classNames: ["close-btn"] }),
     scrollButton: createElement({ classNames: ["scroll-to-top"] }),
     worksContainer: createElement({ classNames: ["more-works-container"] }),
+    heroCopyButton: createElement({ id: "copyBibtexHeroButton", classNames: ["copy-bibtex-hero-btn"] }),
     copyButton: createElement({ id: "copyBibtexButton", classNames: ["copy-bibtex-btn"] }),
+    heroCopyText: createElement({ classNames: ["copy-text"], textContent: "BibTeX" }),
     copyText: createElement({ classNames: ["copy-text"], textContent: "Copy" }),
     copyStatus: createElement({ id: "copyStatus", textContent: "" }),
     bibtex: createElement({ id: "bibtex-code", textContent: "@article{test}" }),
   };
 
+  elements.heroCopyButton.copyText = elements.heroCopyText;
   elements.copyButton.copyText = elements.copyText;
   elements.moreWorksButton.setAttribute("aria-expanded", "false");
   elements.worksContainer.contains = (target) =>
@@ -152,6 +157,8 @@ function createHarness(options = {}) {
           return elements.dropdown;
         case "copyBibtexButton":
           return elements.copyButton;
+        case "copyBibtexHeroButton":
+          return elements.heroCopyButton;
         case "copyStatus":
           return elements.copyStatus;
         case "bibtex-code":
@@ -258,6 +265,24 @@ test("homepage includes the new utility interactions", () => {
   assert.match(js, /function copyBibTeX/);
 });
 
+test("homepage removes the top eyebrow, adds BibTeX CTA, and gives the title more room to wrap naturally", () => {
+  assert.doesNotMatch(html, /<p class="eyebrow">ICLR 2025<\/p>/);
+  assert.match(html, /id="copyBibtexHeroButton"/);
+  assert.match(html, />\s*BibTeX\s*</);
+  assert.match(css, /font-size:\s*clamp\(1\.95rem,\s*3\.9vw,\s*3\.45rem\)\s*!important;/);
+  assert.match(css, /max-width:\s*22ch;/);
+});
+
+test("homepage uses inline SVG for hero and utility icons instead of icon fonts", () => {
+  assert.doesNotMatch(html, /fontawesome\.all\.min\.css|academicons\.min\.css/);
+  assert.doesNotMatch(html, /<i class="/);
+  assert.match(html, /class="scroll-to-top"[\s\S]*?<svg/);
+  assert.match(html, /class="more-works-btn"[\s\S]*?<svg/);
+  assert.match(html, /copyBibtexHeroButton[\s\S]*?<svg/);
+  assert.match(html, />\s*Paper\s*<\/span>/);
+  assert.match(html, />\s*Code\s*<\/span>/);
+});
+
 test("site assets use the refreshed style layer without demo-only sections", () => {
   assert.match(css, /\.more-works-container/);
   assert.match(css, /\.scroll-to-top/);
@@ -318,4 +343,14 @@ test("updateScrollToTopButton reflects page scroll position", () => {
   windowObject.scrollY = 40;
   context.updateScrollToTopButton();
   assert.ok(!elements.scrollButton.classList.contains("visible"));
+});
+
+test("hero BibTeX CTA triggers copy behavior when clicked", async () => {
+  const { context, elements, clipboardAttempts } = createHarness();
+
+  context.bindEvents();
+  await elements.heroCopyButton.dispatch("click", { currentTarget: elements.heroCopyButton });
+
+  assert.equal(clipboardAttempts.length, 1);
+  assert.equal(elements.heroCopyText.textContent, "Copied");
 });
